@@ -1,39 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body{
+    background-color: #F2DCC2;
     max-width: 1366px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    font-family: 'Fuzzy Bubbles', cursive;
 }
 h1{
-    margin: 1rem
+    color: #BF300F;;
+    margin: 1rem;
+    font-size: 3rem;
 }
 #bingo-board-container{
     width: 100%;
-    border: 2px solid black;
     padding: 1% 1%;
 }
 #play-button{
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: xx-large;
+    border: none;
+    border-radius:  3% 10% 3% 10%;
     margin-top: 3rem;
     width: 10rem;
     height: 5rem;
-    background-color: rgb(90, 221, 38);
+    background-color: #BF300F;
     color: white;
 }
+#play-button:hover{
+    opacity: 0.85;
+}
+#play-button:active{
+    opacity: 0.4;
+}
 .cell{
+    border-radius: 3% 10% 3% 10%;
     display: inline-block;
     width: 7.1%;
     min-height: 4rem;
     margin: 0.5rem;
-    border: 2px solid black;
+    border: 2px solid #BF300F;;
     padding: 2% 2%;
+    font-size: large;
+}
+.cell{
+    opacity: 0.9;
 }
 .winningNumber{
-    background-color: yellow;
+    color: #BF300F;
+    background-color: rgba(255, 255, 0, 0.4);
 }
