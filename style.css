@@ -16,7 +16,7 @@ body{
 }
 h1{
     color: #BF300F;;
-    margin: 1rem;
+    margin: 2rem 0 1rem 0;
     font-size: 3rem;
 }
 #bingo-board-container{
@@ -28,7 +28,7 @@ h1{
     font-size: xx-large;
     border: none;
     border-radius:  3% 10% 3% 10%;
-    margin-top: 3rem;
+    margin-top: 1rem;
     width: 10rem;
     height: 5rem;
     background-color: #BF300F;
@@ -43,17 +43,22 @@ h1{
 .cell{
     border-radius: 3% 10% 3% 10%;
     display: inline-block;
-    width: 7.1%;
+    width: 4.8%;
     min-height: 4rem;
-    margin: 0.5rem;
+    margin: 0.125rem;
     border: 2px solid #BF300F;;
-    padding: 2% 2%;
-    font-size: large;
-}
-.cell{
-    opacity: 0.9;
+    padding: 1% 1%;
+    font-size: x-large;
+    opacity: 0.85;
 }
 .winningNumber{
     color: #BF300F;
     background-color: rgba(255, 255, 0, 0.4);
+    animation-duration: 0.8s;
+    animation: select 0.15s 2;
+}
+@keyframes select {
+    0% {background-color: rgba(255, 255, 0, 0.4);}
+    50% {background-color: #BF300F;}
+    100% {background-color: rgba(255, 255, 0, 0.4);}
 }
