@@ -7,32 +7,34 @@
 body{
     background-color: #F2DCC2;
     max-width: 1366px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin: 0 auto;
     font-family: 'Fuzzy Bubbles', cursive;
 }
 h1{
     color: #BF300F;;
-    margin: 2rem 0 1rem 0;
-    font-size: 3rem;
+    margin: 1.75rem auto 0.75rem auto;
+    font-size: 5rem;
+    max-width: 50%;
+    text-transform: uppercase;
+    text-align: center;
 }
 #bingo-board-container{
+    display: grid;
     width: 100%;
-    padding: 1% 1%;
+    grid-template-columns: repeat(19, 1fr);
+    border: 2px solid #BF300F;
 }
 #play-button{
+    display: block;
     font-family: 'Fuzzy Bubbles', cursive;
     font-size: xx-large;
-    border: none;
+    border: 3px solid rgba(255, 255, 0, 0.4);
     border-radius:  3% 10% 3% 10%;
-    margin-top: 1rem;
+    margin: 0.5rem auto 1rem auto;
     width: 10rem;
     height: 5rem;
     background-color: #BF300F;
-    color: white;
+    color: rgba(255, 255, 0, 0.9);
 }
 #play-button:hover{
     opacity: 0.85;
@@ -43,11 +45,10 @@ h1{
 .cell{
     border-radius: 3% 10% 3% 10%;
     display: inline-block;
-    width: 4.8%;
     min-height: 4rem;
-    margin: 0.125rem;
-    border: 2px solid #BF300F;;
-    padding: 1% 1%;
+    border: 2px solid #BF300F;
+    padding-top: 1rem;
+    text-align: center;
     font-size: x-large;
     opacity: 0.85;
 }
@@ -61,4 +62,20 @@ h1{
     0% {background-color: rgba(255, 255, 0, 0.4);}
     50% {background-color: #BF300F;}
     100% {background-color: rgba(255, 255, 0, 0.4);}
+}
+.player-board{
+    margin: 1rem 1rem;
+    max-width: 19%;
+}
+.player-cell{
+    color: #BF300F;
+    border-radius: 3% 10% 3% 10%;
+    margin: 0.125rem;
+    border: 2px solid black;
+    padding-top: 0.5rem;
+    min-height: 2rem;
+    display: inline-block;
+    width: 24%;
+    text-align: center;
+
 }
