@@ -3,12 +3,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Fuzzy Bubbles', cursive;
 }
 body{
     background-color: #F2DCC2;
     max-width: 1400px;
     margin: 0 auto;
-    font-family: 'Fuzzy Bubbles', cursive;
 }
 h1{
     color: #BF300F;;
@@ -24,27 +24,40 @@ h1{
     grid-template-columns: repeat(15, 1fr);
     border: 2px solid #BF300F;
 }
-#play-button{
-    /* display: block; */
-    font-family: 'Fuzzy Bubbles', cursive;
+button{
     font-size: xx-large;
     border: 3px solid rgba(255, 255, 0, 0.4);
     border-radius:  3% 10% 3% 10%;
-    margin: 0.5rem auto 1rem auto;
     width: 10rem;
+    margin-bottom: 1rem;
+    max-width: 50%;
     height: 5rem;
     background-color: #BF300F;
     color: rgba(255, 255, 0, 0.9);
 }
-#play-button:hover{
+button:hover{
     opacity: 0.85;
 }
-#play-button:active{
+button:active{
     opacity: 0.4;
 }
-#start-button{
-    background-color: red;
+input{
+    width: 50px;
+    font-size: xx-large;
+    text-align: center;
+    background: none;
+    border: none;  
 }
+/* input[type=number] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0;   
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+} */
 .cell{
     border-radius: 3% 10% 3% 10%;
     display: inline-block;
@@ -95,5 +108,20 @@ h1{
 .hide{
     display: none;
 }
-
-/* if display property is set and I add a class with another display property it does not override it */
+.block{
+    display: flex;
+    justify-content: center;
+}
+#start-div div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+}
+#start-div div label{
+    margin-top: 2rem;
+}
+#start-div div input{
+    margin: 1rem;
+}

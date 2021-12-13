@@ -49,16 +49,13 @@ const clickPlay = () =>{
         const testCell = allCells[i]
         if (testCell.innerText === winner){
             testCell.classList.add("winningNumber")}}
+    const playerBoard = document.querySelectorAll("#player-board .player-cell")
     for (let i = 0; i < parseInt(playerAmount); i++ ){
-        const playerBoard = document.querySelectorAll(".player-section #player-board div")
-        console.log(playerBoard)
-//         for (let j = 0; j < playerBoard.length; i++){
-//         const checkCell = playerBoard[j]
-//             if (checkCell.innerText === winner){
-//                 checkCell.classList.add("winningNumber")
-// }}
-}}}
-
+        for (let j = 0; j < playerBoard.length; j++){
+            const checkCell = playerBoard[j].innerText
+            if (playerBoard[j].innerText === winner){
+                playerBoard[j].classList.add("winningNumber")
+}}}}}
 
 const playerNumberCell = (arr) =>{ //output a number between 1 and 76 x amount of times without repeating the number
     const randomIndex = Math.floor(Math.random() * arr.length)
