@@ -5,6 +5,11 @@ const numberOfCells = 75
 const playerBoardCells = 25
 const playerNumbers = []
 
+// ************    EVENT LISTENERS    ************
+
+
+
+
 // ************    DECLARATION OF FUNCTIONS    ************
 
 const createCell = () =>{
@@ -19,7 +24,7 @@ const createMainBoard = (x) =>{
         document.getElementById("bingo-board-container").appendChild(bingoCell)
 }}
 
-const firstArray = (x) =>{
+const fillArray = (x) =>{
     const arr = []
     for (let i = 1; i <= x; i++){
         arr.push(i)}
@@ -34,7 +39,7 @@ const chooseWinner = (range) =>{
 
 const clickPlay = () =>{
     if (numberArray.length === 0){
-        alert("Game Over.")
+        alert("Game Over. Please Refresh.")
         return
     } else{
     const allCells = document.querySelectorAll("main div")
@@ -52,49 +57,47 @@ const playerNumberCell = (arr) =>{ //output a number between 1 and 76 x amount o
     return winningNumber
 }
 
-const makeCenterFree = () =>{
-    const allCells = document.getElementById("player-board-id").children
-    allCells.item(13).classList.add("free")
-}
-
 const createPlayerBoard = (cells, boards) =>{
-    const playerNumberArray = firstArray(numberOfCells)
+    let playerNumberArray
     const playerSection = document.createElement("section")
     playerSection.classList.add("player-section")
-    const boardContainer = document.createElement("div")
-    // console.log("you are here")
+    let boardContainer = document.createElement("div")
+    let freeCell
     if (boards === undefined){
-        boardContainer.classList.add("player-board")
+        playerNumberArray = fillArray(numberOfCells)
         for (let i = 0; i < cells; i++){
-            // console.log("here too")
             createCell()
             bingoCell.classList.remove("cell")
             bingoCell.classList.add("player-cell")
             bingoCell.innerText = playerNumberCell(playerNumberArray)
             boardContainer.appendChild(bingoCell)}
-        boardContainer.id = "player-board-id"}
-    const freeCell = boardContainer.children.item(12)
+        boardContainer.id = "player-board"} 
+    else{
+        for (let i = 0; i < boards; i++){
+            playerNumberArray = fillArray(numberOfCells)
+            boardContainer = document.createElement("div")
+            for (let i = 0; i < cells; i++){
+                createCell()
+                bingoCell.classList.remove("cell")
+                bingoCell.classList.add("player-cell")
+                bingoCell.innerText = playerNumberCell(playerNumberArray)
+                boardContainer.appendChild(bingoCell)}
+            boardContainer.id = "player-board"
+            freeCell = boardContainer.children.item(12)
+            freeCell.innerText = "X"
+            freeCell.classList.add("free")
+            playerSection.appendChild(boardContainer)}
+        document.getElementsByTagName("body")[0].appendChild(playerSection)
+        return}
+    freeCell = boardContainer.children.item(12)
     freeCell.innerText = "X"
     freeCell.classList.add("free")
     playerSection.appendChild(boardContainer)
     document.getElementsByTagName("body")[0].appendChild(playerSection)
-            // console.log(boardContainer)
-    //     }} else {
-    //         for(let i = 0; i < boards; i++){
-    //             const boardContainer = document.createElement("div")
-    //             for (let i = 0; i < cells; i++){
-    //                 createCell()
-    //                 bingoCell.classList.remove("cell")
-    //                 bingoCell.classList.add("player-cell")
-    //                 bingoCell.innerText = playerNumberCell(playerNumberArray)
-    //                 boardContainer.appendChild(bingoCell)
-    //                 boardContainer.classList.add("player-board")}       
-    // }}
-
 }
 
 // ************    INITIALIZATION    ************
 
 createMainBoard(numberOfCells)
-const numberArray = firstArray(numberOfCells)
-createPlayerBoard(playerBoardCells)
+const numberArray = fillArray(numberOfCells)
+createPlayerBoard(playerBoardCells, 5)
