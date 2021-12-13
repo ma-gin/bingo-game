@@ -6,7 +6,7 @@
 }
 body{
     background-color: #F2DCC2;
-    max-width: 1366px;
+    max-width: 1400px;
     margin: 0 auto;
     font-family: 'Fuzzy Bubbles', cursive;
 }
@@ -21,7 +21,7 @@ h1{
 #bingo-board-container{
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(19, 1fr);
+    grid-template-columns: repeat(15, 1fr);
     border: 2px solid #BF300F;
 }
 #play-button{
@@ -64,18 +64,29 @@ h1{
     100% {background-color: rgba(255, 255, 0, 0.4);}
 }
 .player-board{
-    margin: 1rem 1rem;
-    max-width: 19%;
+    gap: 0.125rem;
+    width: 20%;
+    max-width: 200px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
 }
 .player-cell{
+    width: 100%;
+    display: grid;
+    place-items: center;
     color: #BF300F;
     border-radius: 3% 10% 3% 10%;
-    margin: 0.125rem;
     border: 2px solid black;
-    padding-top: 0.5rem;
     min-height: 2rem;
-    display: inline-block;
-    width: 24%;
-    text-align: center;
-
+}
+.free{
+    background-color: #BF300F;
+    color: rgba(255, 255, 0, 0.9);
+}
+.player-section{
+    padding: 2rem;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    bottom: 0;
 }
