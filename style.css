@@ -66,7 +66,7 @@ h1{
 #player-board{
     gap: 0.125rem;
     margin: 0 1.125rem;
-    max-width: 20%;
+    width: clamp(17.5%, 20vw, 40%);
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 }
@@ -86,8 +86,6 @@ h1{
 .player-section{
     padding: 2rem 0;
     width: 100%;
-    position: fixed;
     display: flex;
-    bottom: 0;
     justify-content: center;
 }
