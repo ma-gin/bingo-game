@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="bingo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/bingo.png" type="image/x-icon">
     <script src="main.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <title>Bingo</title>
 </head>
 <body>
+    <div class="reload">
+        <img id="reload-button" onclick="window.location.reload(true)" src="assets/rotate.png" alt="reload page">
+    </div>
     <h1 class="title">Bingo</h1>
     <div class="block">
         <button onclick="clickPlay()" id="play-button" class="hide">PLAY</button>

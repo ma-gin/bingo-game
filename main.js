@@ -5,11 +5,6 @@ const numberOfCells = 75
 const playerBoardCells = 25
 const playerNumbers = []
 
-// ************    EVENT LISTENERS    ************
-
-
-
-
 // ************    DECLARATION OF FUNCTIONS    ************
 
 const createCell = () =>{
@@ -99,3 +94,8 @@ const startGame = () =>{
 
 createMainBoard(numberOfCells)
 const numberArray = fillArray(numberOfCells)
+
+
+// add player name functionality
+// add restart game button
+// add endgame functionality

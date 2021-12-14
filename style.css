@@ -41,13 +41,6 @@ button:hover{
 button:active{
     opacity: 0.4;
 }
-input{
-    width: 50px;
-    font-size: xx-large;
-    text-align: center;
-    background: none;
-    border: none;  
-}
 /* input[type=number] { 
     -moz-appearance: textfield;
     appearance: textfield;
@@ -123,5 +116,25 @@ input[type=number]::-webkit-outer-spin-button {
     margin-top: 2rem;
 }
 #start-div div input{
+    width: 50px;
+    font-size: xx-large;
+    text-align: center;
+    background: none;
+    border: none;  
     margin: 1rem;
+}
+.reload{
+    position: relative;
+}
+#reload-button{
+    position: absolute;
+    width: 3rem;
+    border-radius: 3% 10% 3% 10%;
+    cursor: pointer;
+    border: 3px solid #BF300F;
+    top: 1rem;
+    right: 3rem;
+}
+#reload-button:hover{
+    opacity: 0.8;
 }
